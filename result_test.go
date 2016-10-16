@@ -40,7 +40,7 @@ func TestFixedGetResults(t *testing.T) {
 	if r.TestID != 91193 {
 		t.Fatalf("Wrong testID: %v", r.TestID)
 	}
-	if r.StatusID != 5 {
+	if r.StatusID != StatusFailed {
 		t.Fatalf("Wrong status: %v", r.StatusID)
 	}
 	if r.CreatedBy != 11 {
