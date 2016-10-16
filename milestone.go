@@ -4,14 +4,14 @@ import "strconv"
 
 // Milestone represents a Milestone
 type Milestone struct {
-	CompletedOn int    `json:"completed_on"`
-	Description string `json:"description"`
-	DueOn       int    `json:"due_on"`
-	ID          int    `json:"id"`
-	IsCompleted bool   `json:"is_completed"`
-	Name        string `json:"name"`
-	ProjectID   int    `json:"project_id"`
-	URL         string `json:"url"`
+	CompletedOn timestamp `json:"completed_on"`
+	Description string    `json:"description"`
+	DueOn       timestamp `json:"due_on"`
+	ID          int       `json:"id"`
+	IsCompleted bool      `json:"is_completed"`
+	Name        string    `json:"name"`
+	ProjectID   int       `json:"project_id"`
+	URL         string    `json:"url"`
 }
 
 // SendableMilestone represents a Milestone
