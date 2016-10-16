@@ -24,10 +24,12 @@ type ResultFieldConfig struct {
 // ResultFieldOption represents an option
 // a ResultField can have
 type ResultFieldOption struct {
-	Format      string `json:"format"`
-	HasActual   bool   `json:"has_actual"`
-	HasExpected bool   `json:"has_expected"`
-	IsRequired  bool   `json:"is_required"`
+	Format       string `json:"format"`
+	HasActual    bool   `json:"has_actual"`
+	HasExpected  bool   `json:"has_expected"`
+	IsRequired   bool   `json:"is_required"`
+	DefaultValue string `json:"default_value"`
+	Items        string `json:"items"`
 }
 
 // GetResultFields returns a list of available test result custom fields
