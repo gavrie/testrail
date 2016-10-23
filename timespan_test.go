@@ -42,6 +42,7 @@ func TestTimespanUnmarshal(t *testing.T) {
 func TestTimespanMarshal(t *testing.T) {
 	var testData = []struct{ json, stringDuration string }{
 		{`null`, "0s"},
+		{`"0h 0m 1s"`, "144ms"},
 		{`"0h 0m 15s"`, "15s"},
 		{`"0h 12m 0s"`, "12m"},
 		{`"11h 0m 0s"`, "11h"},
@@ -69,7 +70,7 @@ func TestTimespanMarshal(t *testing.T) {
 		}
 
 		if string(data) != td.json {
-			t.Fatalf("Wrong data: %v", string(data))
+			t.Fatalf("Wrong data: %v, json: %v", string(data), td.json)
 		}
 	}
 }

@@ -80,6 +80,11 @@ func (tsp timespan) MarshalJSON() ([]byte, error) {
 		return []byte(`null`), nil
 	}
 
+	// TestRail can't handle timespans less than 1 second
+	if d < 1*time.Second {
+		d = 1 * time.Second
+	}
+
 	h, d := d/time.Hour, d%time.Hour
 	m, d := d/time.Minute, d%time.Minute
 	s := d / time.Second
